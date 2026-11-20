@@ -1,0 +1,22 @@
+name: New language
+description: Propose (or volunteer for) a built-in translation
+labels: [translation, good first issue]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language and code
+      placeholder: 'Hindi (hi)'
+    validations:
+      required: true
+  - type: textarea
+    id: samples
+    attributes:
+      label: Sample translations
+      description: How a native speaker would write "We use cookies", "Accept all", "Reject all" and "Cookie preferences".
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contributing
+      options:
+        - label: I would like to write this translation (see CONTRIBUTING.md, "Adding a language")

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cookie-consent-lite demo</title>
+
+    <!-- 1. Configure (optional) and load the banner BEFORE any Google tag,
+            so the Consent Mode defaults are in place first.
+            Build it with `npm run build`, or copy cookie-consent.min.js from a release. -->
+    <script>
+      window.CookieConsentConfig = {
+        revision: 1,
+        policyUrl: '/cookie-policy',
+        theme: 'auto',
+      };
+    </script>
+    <script src="../dist/cookie-consent.min.js"></script>
+
+    <!-- 2. Google tag (gtag.js). With Consent Mode it loads right away but
+            does not set analytics or ad cookies until the visitor allows them.
+            Replace G-XXXXXXX with your measurement ID. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <!-- 3. A third-party script that must not run at all without consent. -->
+    <script type="text/plain" data-consent="analytics">
+      console.log('analytics allowed: this script now runs');
+    </script>
+  </head>
+  <body>
+    <h1>cookie-consent-lite demo</h1>
+    <p>Open the developer tools and watch <code>dataLayer</code> as you choose.</p>
+
+    <!-- An embed that loads only with marketing consent. -->
+    <iframe
+      data-consent="marketing"
+      data-src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"
+      title="Example video"
+      width="560"
+      height="315"
+    ></iframe>
+
+    <footer>
+      <!-- Lets visitors change their mind later. -->
+      <button type="button" data-cc-open>Cookie settings</button>
+    </footer>
+
+    <script>
+      CookieConsent.onChange((state) => console.log('consent changed', state.categories));
+    </script>
+  </body>
+</html>

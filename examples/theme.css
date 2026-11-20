@@ -1,0 +1,13 @@
+/* A dark, rounded theme. Load after the page's own CSS; the banner adds its
+   default styles with the same specificity, so set these on .cc-root. */
+.cc-root {
+  --cc-bg: #10141a;
+  --cc-fg: #f2f4f7;
+  --cc-muted: #b4bcc8;
+  --cc-border: #2a313c;
+  --cc-accent: #ffb547;
+  --cc-accent-fg: #10141a;
+  --cc-radius: 20px;
+  --cc-font: "Inter", system-ui, sans-serif;
+  --cc-max-width: 720px;
+}

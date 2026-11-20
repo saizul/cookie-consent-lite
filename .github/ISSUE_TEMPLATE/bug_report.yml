@@ -1,0 +1,39 @@
+name: Bug report
+description: The banner, the dialog, Consent Mode or script blocking does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: The options, CookieConsentConfig or data attributes you use.
+      render: js
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Steps to reproduce. For Consent Mode problems, paste `dataLayer` from the console.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: cookie-consent-lite version
+      placeholder: '0.1.0'
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser, OS and assistive technology (if any)
+      placeholder: 'Firefox 140, Windows 11, NVDA'
+    validations:
+      required: true
